@@ -82,22 +82,6 @@ src/
 - Los nombres del dominio están en español (por ejemplo, `canchas` = canchas deportivas).
 - No existen las carpetas `ios/` ni `android/`: la configuración nativa se genera a partir de `app.json` y los *config plugins*.
 
-## Componentes compartidos
-
-### `Button`
-
-```tsx
-<Button text="Entrar" handleLogin={onPress} />
-<Button text="Eliminar" handleLogin={onDelete} variant="danger" />
-<Button text="Cancelar" handleLogin={onCancel} variant="ghost" />
-```
-
-### `CanchaCard`
-
-```tsx
-<CanchaCard cancha={cancha} onPress={() => router.push(`/canchas/${cancha.id}`)} />
-```
-
 ## Próximos pasos
 
 - Autenticación real y manejo de sesión.
