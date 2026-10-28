@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "ground-app",
     "name": "ground-app",
     "slug": "ground-app",
     "version": "1.0.0",
@@ -20,6 +21,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font"
+    ]
   }
 }
