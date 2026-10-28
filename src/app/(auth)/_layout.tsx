@@ -8,6 +8,7 @@ const AuthLayout = () => {
         name="canchas"
         options={{
           title: "Canchas",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="football-outline" color={color as string} size={size} />
           ),

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Link, router } from "expo-router";
-import AuthInput from "@/components/shared/Input";
+import Button from "@/components/shared/Button/Button";
+import Input from "@/components/shared/Input/Input";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -27,28 +28,28 @@ const Register = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Crear cuenta</Text>
-      <AuthInput
+      <Input
         label="Nombre"
         value={name}
         onChangeText={setName}
         autoCapitalize="words"
         autoComplete="name"
       />
-      <AuthInput
+      <Input
         label="Correo electrónico"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
         autoComplete="email"
       />
-      <AuthInput
+      <Input
         label="Contraseña"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
         autoComplete="new-password"
       />
-      <AuthInput
+      <Input
         label="Confirmar contraseña"
         value={confirmPassword}
         onChangeText={setConfirmPassword}
@@ -56,9 +57,7 @@ const Register = () => {
         autoComplete="new-password"
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
-      <Pressable style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>Registrarme</Text>
-      </Pressable>
+      <Button text="Registrarme" handleLogin={handleRegister} />
       <Link href="/" style={styles.link}>
         ¿Ya tienes cuenta? Inicia sesión
       </Link>
@@ -70,13 +69,6 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", padding: 24, gap: 16 },
   title: { fontSize: 28, fontWeight: "700", marginBottom: 8 },
   error: { color: "#dc2626", fontSize: 14 },
-  button: {
-    backgroundColor: "#16a34a",
-    borderRadius: 8,
-    paddingVertical: 12,
-    alignItems: "center",
-  },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
   link: { textAlign: "center", color: "#16a34a", fontSize: 14 },
 });
 

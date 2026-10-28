@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Link, router } from "expo-router";
-import Input from "@/components/shared/Input";
+import Button from "@/components/shared/Button/Button";
+import Input from "@/components/shared/Input/Input";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,9 +30,7 @@ const Login = () => {
         secureTextEntry
         autoComplete="password"
       />
-      <Pressable style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Entrar</Text>
-      </Pressable>
+      <Button text="Entrar" handleLogin={handleLogin} />
       <Link href="/register" style={styles.link}>
         ¿No tienes cuenta? Regístrate
       </Link>
@@ -42,13 +41,6 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", padding: 24, gap: 16 },
   title: { fontSize: 28, fontWeight: "700", marginBottom: 8 },
-  button: {
-    backgroundColor: "#16a34a",
-    borderRadius: 8,
-    paddingVertical: 12,
-    alignItems: "center",
-  },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
   link: { textAlign: "center", color: "#16a34a", fontSize: 14 },
 });
 
